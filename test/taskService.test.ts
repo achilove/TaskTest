@@ -1,24 +1,11 @@
-let client = require('knex-alasql');
+import * as knex from 'knex';
+import {alaSqlConfig} from "./alasql.config"
+
 import {TaskService} from "../src/services/TasksService";
 
 
 describe('TaskService => create', () => {
-    let config = {
- 
-        client: client,
-     
-        // Optional properties with default values
-        name: 'knex_database',
-        version: '1.0',
-        displayName: 'knex_database', // inherited from 'name'
-        estimatedSize: 5 * 1024 * 1024, // 5MB
-     
-        // AlaSQL specific options https://github.com/agershun/alasql/wiki/AlaSQL%20Options
-        options: {
-            mysql: true
-        }
-    };
-    let taskService = new TaskService(config)
+    let taskService = new TaskService(knex(alaSqlConfig))
     it('tests create method', async () => {
         taskService.create({
             "subject":"test subject",
