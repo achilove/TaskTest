@@ -2,16 +2,15 @@ import {BodyParams, Controller, Get, Post, Delete, UseAfter} from "@tsed/common"
 import {TaskService} from "../../services/TasksService";
 import { CreateTaskDto } from "../../dto/CreateTask.dto";
 import { SucessResponseEndpointMiddleware } from "../../middlewares/task.middleware";
+import * as knex from 'knex';
+import * as config from "../../../knexfile" 
 
 @Controller("/tasks")
 
 export class TaskCtl {
   private taskService: TaskService
   constructor() {
-    this.taskService = new TaskService({
-      client: 'pg',
-      connection: process.env.DATABASE_URL || 'postgres://task:jIuhlkVmdU@localhost:5432/task_db'
-    })
+    this.taskService = new TaskService(knex(config))
   }
 
   @Post("/")

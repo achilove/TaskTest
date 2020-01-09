@@ -1,14 +1,12 @@
 import { CreateTaskDto } from "../dto/CreateTask.dto";
 import {Exception} from "ts-httpexceptions";
 import * as knex from 'knex';
-import { Config } from 'knex';
 
 export class TaskService {
-  private connector: knex;
+  // private connector: knex;
 
-  constructor(private config: Config) {
-    this.connector = knex(config)
-
+  constructor(private connector: knex) {
+    // this.connector = knex(config)
   }
 
   async create(task: CreateTaskDto) {
