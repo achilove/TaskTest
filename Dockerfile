@@ -9,6 +9,8 @@ RUN npm install
 
 COPY . .
 
+# RUN ["chmod", "+x", "/home/app/scripts/wait-for-it.sh"]
+
 EXPOSE 3000
 
 # RUN npx knex migrate:latest

@@ -2,22 +2,30 @@
 version: "3"
 services:
   app:
+    container_name: api-task
     build: .
-    depends_on:
-      - postgres
     ports:
       - "3000:3000"
-    command: ["./scripts/wait-for-it.sh", "db:5432", "--", "npm", "run start:prod"]
+    command: npm run start:prod
     environment:
-      DATABASE_URL: postgres://task:jIuhlkVmdU@localhost:5432/task_db
+      DATABASE_URL: postgres://task:jIuhlkVmdU@postgres:5432/task_db
       NODE_ENV: production
+    depends_on:
+      - postgres
 
 
   postgres:
+    container_name: postgres
+    container_name: postgres
     image: postgres:latest
     ports:
-      - "35432:5432"
+      - "5432:5432"
     environment:
       POSTGRES_USER: task
       POSTGRES_PASSWORD: jIuhlkVmdU
       POSTGRES_DB: task_db
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U task task_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
