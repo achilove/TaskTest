@@ -10,7 +10,7 @@
     "typeRoots": [
       "./node_modules/@types"
     ],
-    "types" : ["mocha"],
+    "types" : ["mocha", "jest"],
     "module": "commonjs",
     "moduleResolution": "node",
     "experimentalDecorators": true,
