@@ -1,3 +1,5 @@
 README.md
 task(omsk).postman_collection.json
 node_modules
+tests
+dist
