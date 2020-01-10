@@ -24,7 +24,7 @@ services:
       POSTGRES_PASSWORD: jIuhlkVmdU
       POSTGRES_DB: task_db
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U task task_db"]
-      interval: 5s
-      timeout: 10s
+      test: ["CMD-SHELL", "pg_isready -U task -d task_db"]
+      interval: 1s
+      timeout: 20s
       retries: 5
