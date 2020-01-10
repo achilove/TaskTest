@@ -4,11 +4,13 @@ Buid on top of Ts.ED - TypeORM
 See [Ts.ED](https://tsed.io) project for more information.
 
 
-Used express, typescript, knex, ajv for validation, alasql anf jest for unit testing (Nest.js have all these from the box but test requirements was so)
-db - Postgre
-docker 
+Used Postgresql, docker-compose, express, typescript, knex, ajv for validation, alasql and jest for testing 
 
 
-use Postman collection task(omsk).postman_collection.json
+
+use Postman collection task_test.postman_collection
+
+npm test - for unit testing alasql
+docker-compose up - for build and run app
 
 
