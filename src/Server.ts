@@ -27,9 +27,6 @@ export class Server extends ServerLoader {
     .use(bodyParser.urlencoded({
       extended: true
     }))
-     
-
-    // return null;
   }
 
   $afterRoutesInit() {
