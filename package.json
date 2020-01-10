@@ -4,7 +4,7 @@
   "description": "task management API test project",
   "scripts": {
     "build": "npm run tsc",
-    "test": "TS_TEST=true jest",
+    "test": "jest",
     "test:lint": "tslint --project tsconfig.json",
     "test:lint:fix": "tslint --project tsconfig.json --fix",
     "tsc": "tsc --project tsconfig.json",
