@@ -9,6 +9,7 @@ services:
     environment:
       DATABASE_URL: postgres://task:jIuhlkVmdU@postgres:5432/task_db
       NODE_ENV: production
+      WAIT_HOSTS: postgres:5432
     depends_on:
       - postgres
 
