@@ -3,10 +3,8 @@ import {Exception} from "ts-httpexceptions";
 import * as knex from 'knex';
 
 export class TaskService {
-  // private connector: knex;
 
   constructor(private connector: knex) {
-    // this.connector = knex(config)
   }
 
   async create(task: CreateTaskDto) {
