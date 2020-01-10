@@ -9,11 +9,9 @@ RUN npm install
 
 COPY . .
 
-# RUN ["chmod", "+x", "/home/app/scripts/wait-for-it.sh"]
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.7.2/wait /wait
+RUN chmod +x /wait
 
 EXPOSE 3000
 
-# RUN npx knex migrate:latest
-CMD npm run start:prod
-
-# CMD ./scripts/start.sh
+CMD /wait && npm run start:prod

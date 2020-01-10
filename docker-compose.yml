@@ -6,7 +6,6 @@ services:
     build: .
     ports:
       - "3000:3000"
-    command: npm run start:prod
     environment:
       DATABASE_URL: postgres://task:jIuhlkVmdU@postgres:5432/task_db
       NODE_ENV: production
